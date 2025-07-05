@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:16.4
+    environment:
+      POSTGRES_USER: ${DB_NAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./postgres-data:/data/postgres
+    ports:
+      - "5432:5432"
